@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Stories
+*/
+
+"reload" = "Обновить";
+"error" = "Ошибка";
+"internet.error.description" = "Похоже, отсутствует соединение с Интернетом";
+"server.error.description" = "На сервере что-то пошло не так";
