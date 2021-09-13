@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
 	s.dependency 'Kingfisher'
 
 	# 8
-	s.source_files = '**/Sources/**/*.swift'
+	s.source_files = 'Sources/**/*.swift'
 
 	# 10
 	s.swift_version = "5.0"
