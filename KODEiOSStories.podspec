@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
 	# 6
 	s.source = { :git => "git@github.com:kode-t/ios-stories.git", 
-		     	 :branch => "master", 
+		     	 :branch => "feature/stories-repo", 
 	             :tag => s.version.to_s }
 
 	# 7
