@@ -23,8 +23,7 @@ Pod::Spec.new do |s|
 	s.homepage = "https://github.com/kode-t/ios-stories"
 
 	# 6
-	s.source = { :git => "git@github.com:kode-t/ios-stories.git", 
-		     	 :branch => "feature/stories-repo", 
+	s.source = { :git => "git@github.com:kode-t/ios-stories.git",  :branch => "feature/stories-repo", 
 	             :tag => s.version.to_s }
 
 	# 7
