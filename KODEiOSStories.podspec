@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 	s.requires_arc = true
 
 	# 2
-	s.version = "0.0.1"
+	s.version = "1.0"
 
 	# 3
 	s.license = { :type => 'MIT', :text => <<-LICENSE
@@ -29,11 +29,12 @@ Pod::Spec.new do |s|
 
 	# 7
 	s.framework = "UIKit"
-	s.dependency 'SnapKit'
-	s.dependency 'Kingfisher'
 
 	# 8
-	s.source_files = 'Sources/**/*.swift'
+	s.source_files = '**/Sources/**/*.{swift}'
+
+	# 9
+	s.resources = "Sources/**/*.{xcassets,strings,pdf}"
 
 	# 10
 	s.swift_version = "5.0"
