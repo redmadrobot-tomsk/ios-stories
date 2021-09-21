@@ -5,7 +5,6 @@
 
  let package = Package(
    name: "KODEiOSStories",
-   defaultLocalization: "en",
    platforms: [
      .iOS(.v11)
    ],
