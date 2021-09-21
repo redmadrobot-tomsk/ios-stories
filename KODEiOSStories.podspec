@@ -23,12 +23,13 @@ Pod::Spec.new do |s|
 	s.homepage = "https://github.com/kode-t/ios-stories"
 
 	# 6
-	s.source = { :git => "git@github.com:kode-t/ios-stories.git", 
-		     	 :branch => "feature/stories-repo", 
+	s.source = { :git => "git@github.com:kode-t/ios-stories.git",  :branch => "master", 
 	             :tag => s.version.to_s }
 
 	# 7
 	s.framework = "UIKit"
+	s.dependency 'SnapKit'
+	s.dependency 'Kingfisher'
 
 	# 8
 	s.source_files = '**/Sources/**/*.{swift}'
