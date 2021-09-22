@@ -4,15 +4,15 @@
  import PackageDescription
 
  let package = Package(
-   name: "KODEiOSStories",
+   name: "Stories",
    defaultLocalization: "en",
    platforms: [
      .iOS(.v11)
    ],
    products: [
      .library(
-       name: "KODEiOSStories",
-       targets: ["KODEiOSStories"])
+       name: "Stories",
+       targets: ["Stories"])
    ],
    dependencies: [
      .package(url: "https://github.com/onevcat/Kingfisher", from: "6.0.0"),
@@ -20,7 +20,7 @@
    ],
    targets: [
      .target(
-       name: "KODEiOSStories",
+       name: "Stories",
        dependencies: ["Kingfisher", "SnapKit"],
        path: "Sources")
    ]

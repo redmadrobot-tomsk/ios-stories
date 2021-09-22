@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 	# 1
 	s.platform = :ios
 	s.ios.deployment_target = '11.0'
-	s.name = "KODEiOSStories"
+	s.name = "Stories"
 	s.summary = "Instagram-like stories for iOS"
 	s.requires_arc = true
 
