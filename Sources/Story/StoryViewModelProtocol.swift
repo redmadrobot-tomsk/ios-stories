@@ -62,7 +62,7 @@ protocol StoryViewModelProtocol: AnyObject {
   var gradientEndColor: UIColor? { get }
   
   var activityIndicatorStyle: UIActivityIndicatorView.Style { get set }
-  var activityIndicatorColor: UIColor? { get set }
+  var activityIndicatorColor: UIColor { get set }
   
   var currentFrameIndex: Int { get set }
   
@@ -76,19 +76,22 @@ protocol StoryViewModelProtocol: AnyObject {
 
 extension StoryViewModelProtocol {
   var topGradientOffset: CGFloat {
-    return 0
+    0
   }
   var bottomGradientOffset: CGFloat {
-    return 0
+    0
   }
   var gradientStartColor: UIColor? {
-    return nil
+    nil
   }
   var gradientEndColor: UIColor? {
     nil
   }
   var activityIndicatorStyle: UIActivityIndicatorView.Style {
-    return .gray
+    .medium
+  }
+  var activityIndicatorColor: UIColor {
+    .white
   }
   
   func incrementCurrentFrameIndex() {

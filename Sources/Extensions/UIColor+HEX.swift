@@ -12,12 +12,12 @@ extension UIColor {
       return
     }
     let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-    var int: UInt32 = 0
-    Scanner(string: hex).scanHexInt32(&int)
-    let alpha: UInt32
-    let red: UInt32
-    let green: UInt32
-    let blue: UInt32
+    var int: UInt64 = 0
+    Scanner(string: hex).scanHexInt64(&int)
+    let alpha: UInt64
+    let red: UInt64
+    let green: UInt64
+    let blue: UInt64
     switch hex.count {
     case 3:
       (alpha, red, green, blue) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)

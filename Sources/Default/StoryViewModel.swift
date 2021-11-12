@@ -5,6 +5,11 @@
 
 import UIKit
 
+private extension Constants {
+  static let topSafeAreaInset: CGFloat = UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0
+  static let bottomSafeAreaInset: CGFloat = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
+}
+
 class StoryViewModel: StoryViewModelProtocol {
   // MARK: - Properties
   
@@ -21,7 +26,7 @@ class StoryViewModel: StoryViewModelProtocol {
   }
   
   var activityIndicatorStyle: UIActivityIndicatorView.Style
-  var activityIndicatorColor: UIColor? = nil
+  var activityIndicatorColor: UIColor
   var storyFrameDuration: TimeInterval = 7
   var controlsAnimationDuration: TimeInterval = 0.2
   
@@ -37,10 +42,10 @@ class StoryViewModel: StoryViewModelProtocol {
   var shouldShowLoadingError: Bool = true
   
   var contentViewTrailingLeadingInset: CGFloat = 16
-  var contentViewBottomOffset: CGFloat? = -24
-   var contentViewTopOffset: CGFloat? = 29
+  var contentViewBottomOffset: CGFloat? = -(Constants.bottomSafeAreaInset + 24)
+  var contentViewTopOffset: CGFloat? = 29
   
-  var controlsViewTopOffset: CGFloat = 32
+  var controlsViewTopOffset: CGFloat =  max(Constants.topSafeAreaInset, 32)
   
   var loadingErrorViewConstraints = ViewConstraintsContainer(leadingOffset: 16,
                                                                     trailingOffset: -16,
@@ -134,10 +139,12 @@ class StoryViewModel: StoryViewModelProtocol {
     
     switch colorMode {
     case .dark:
-      activityIndicatorStyle = .gray
+      activityIndicatorStyle = .medium
+      activityIndicatorColor = .white
       imageViewBackgroundColor = .white
     case .light:
-      activityIndicatorStyle = .white
+      activityIndicatorStyle = .medium
+      activityIndicatorColor = .lightGray
       imageViewBackgroundColor = .black
     }
   }
