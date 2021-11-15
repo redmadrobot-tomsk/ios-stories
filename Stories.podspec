@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
 	s.homepage = "https://github.com/kode-t/ios-stories"
 
-	s.source = { :git => "git@github.com:kode-t/ios-stories.git",  :branch => "master", 
+	s.source = { :git => "https://github.com/kode-t/ios-stories.git",  :branch => "master", 
 	             :tag => s.version.to_s }
 
 	s.ios.deployment_target = '13.0'
