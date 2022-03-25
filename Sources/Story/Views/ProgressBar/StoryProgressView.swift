@@ -109,6 +109,7 @@ class StoryProgressView: UIProgressView {
       $0.speed = 1.0
       $0.timeOffset = 0.0
       $0.beginTime = 0.0
+      $0.opacity = 1
     }
   }
   
