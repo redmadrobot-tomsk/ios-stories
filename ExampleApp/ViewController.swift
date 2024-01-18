@@ -35,7 +35,7 @@ class ViewController: BaseViewController {
   
   private func loadData() {
     let session = URLSession.shared
-    guard let url = URL(string: "https://demo.dev.kode-t.ru/mobile/api/v1/stories") else { return }
+    guard let url = URL(string: "https://demo.dev.rmr-t.ru/mobile/api/v1/stories") else { return }
     session.dataTask(with: url) { [weak self] data, respnse, error in
       if let data = data {
         self?.handleResponse(data: data)
