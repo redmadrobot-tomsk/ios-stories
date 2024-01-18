@@ -176,12 +176,12 @@ class StoriesStorage: StoriesStoring {
                                      secondStoryOptions: StoryStoreOptions) -> Bool {
     for (index, type) in configuration.sortType.enumerated() {
       let comparator: (AnyComparable, AnyComparable) -> Bool
-      let order = configuration.sortOrder.element(at: index) ?? configuration.sortOrder.last ?? .asc
+      let order = configuration.sortOrder.element(at: index) ?? configuration.sortOrder.last ?? .forward
       
       switch order {
-      case .asc:
+      case .forward:
         comparator = (<)
-      case .desc:
+      case .reverse:
         comparator = (>)
       }
       

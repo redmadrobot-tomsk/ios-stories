@@ -8,11 +8,17 @@ import UIKit
 extension UIButton {
   static func makeDefaultButton() -> UIButton {
     let button = UIButton(type: .system)
-    button.backgroundColor = .white
-    button.setTitleColor(.black, for: .normal)
-    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-    button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-    button.layer.cornerRadius = 8
+    var configuration = UIButton.Configuration.plain()
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+    configuration.background.backgroundColor = .white
+    configuration.baseForegroundColor = .black
+    configuration.cornerStyle = .fixed
+    configuration.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+      var outgoing = incoming
+      outgoing.font = .boldSystemFont(ofSize: 16)
+      return outgoing
+    }
+    button.configuration = configuration
     button.snp.makeConstraints { make in
       make.height.equalTo(44)
     }

@@ -72,12 +72,14 @@ class CustomErrorStateView: UIView, StoryErrorStateViewProtocol {
   
   private func setupReloadButton() {
     stackView.addArrangedSubview(reloadButton)
-    reloadButton.setTitle("Обновить", for: .normal)
-    reloadButton.setTitleColor(.white, for: .normal)
-    reloadButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-    reloadButton.layer.borderWidth = 1
-    reloadButton.layer.borderColor = UIColor.white.cgColor
-    reloadButton.layer.cornerRadius = 22
+    var configuration = UIButton.Configuration.plain()
+    configuration.title = "Обновить"
+    configuration.baseForegroundColor = .white
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+    configuration.background.strokeWidth = 1
+    configuration.background.strokeColor = .white
+    configuration.cornerStyle = .capsule
+    reloadButton.configuration = configuration
     reloadButton.addTarget(self, action: #selector(didTapReload), for: .touchUpInside)
     reloadButton.snp.makeConstraints { make in
       make.height.equalTo(44)

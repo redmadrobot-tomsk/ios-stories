@@ -30,7 +30,7 @@ class ViewController: BaseViewController {
     }
     
     storiesStorage.configurator.setStoriesLifetime(.infinity).deleteExpiredStories(false)
-      .orderBy(.date).orderDirection(.desc).show(.all).prefetchImages(true).reload()
+      .orderBy(.date).orderDirection(.reverse).show(.all).prefetchImages(true).reload()
   }
   
   private func loadData() {
