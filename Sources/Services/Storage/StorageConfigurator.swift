@@ -61,7 +61,7 @@ public class StorageConfigurator {
   
   /// Sets sorting direction.
   ///
-  /// - Parameter direction: A `SortOrder` that describes the direction – `asc` or `desc`.
+  /// - Parameter direction: A `SortOrder` that describes the direction – `forward` or `reverse`.
   ///
   /// - Returns: `StorageConfiguratior` object.
   @discardableResult
@@ -75,7 +75,7 @@ public class StorageConfigurator {
   /// Sets sorting directions. You can pass an array of directions so each field from passed sorting fields will be sorted according to it's direction.
   /// If a count of directions is less then a count of fileds, the last direction will be used.
   ///
-  /// - Parameter directions: An array`SortOrder` that describes the direction of it's field – `asc` or `desc`.
+  /// - Parameter directions: An array`SortOrder` that describes the direction of it's field – `forward` or `reverse`.
   ///
   /// - Returns: `StorageConfiguratior` object.
   @discardableResult
