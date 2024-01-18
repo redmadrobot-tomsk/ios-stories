@@ -33,7 +33,7 @@ class StoriesTests: XCTestCase {
   }
   
   func testConfiguratorSortOrderPropertyUpdatesForSingle() throws {
-    let direction: SortOrder = .asc
+    let direction: SortOrder = .forward
     
     storage.configurator.orderDirection(direction)
     
@@ -41,7 +41,7 @@ class StoriesTests: XCTestCase {
   }
   
   func testConfiguratorSortOrderPropertyUpdatesForMultiple() throws {
-    let directions: [SortOrder] = [.desc, .asc]
+    let directions: [SortOrder] = [.reverse, .forward]
     
     storage.configurator.orderDirection(directions)
     
@@ -92,7 +92,7 @@ class StoriesTests: XCTestCase {
   // MARK: - Test storage
   
   func testStorageAddsSingleStoryToEmptyStorage() throws {
-    storage.configurator.orderBy(.date).orderDirection(.asc)
+    storage.configurator.orderBy(.date).orderDirection(.forward)
     try storage.clear()
     let story = fakeStories()[0]
     
@@ -103,7 +103,7 @@ class StoriesTests: XCTestCase {
   }
   
   func testStorageAddsSingleStoryToExistingStories() throws {
-    storage.configurator.orderBy(.date).orderDirection(.asc)
+    storage.configurator.orderBy(.date).orderDirection(.forward)
     let stories = fakeStories()
     let firstStory = stories[0]
     let secondStory = stories[1]
@@ -135,7 +135,7 @@ class StoriesTests: XCTestCase {
   }
   
   func testStorageAddsMultipleStoriesToEmptyStorage() throws {
-    storage.configurator.orderBy(.date).orderDirection(.asc)
+    storage.configurator.orderBy(.date).orderDirection(.forward)
     try storage.clear()
     let stories = fakeStories()
     
@@ -146,7 +146,7 @@ class StoriesTests: XCTestCase {
   }
   
   func testStorageAddsMultipleStoriesToExistingStories() throws {
-    storage.configurator.orderBy(.date).orderDirection(.asc)
+    storage.configurator.orderBy(.date).orderDirection(.forward)
     let stories = fakeStories()
     let firstStories = Array(stories[0...2])
     let secondStories = Array(stories[3...5])
@@ -178,7 +178,7 @@ class StoriesTests: XCTestCase {
   }
   
   func testStorageReplacesStories() throws {
-    storage.configurator.orderBy(.date).orderDirection(.asc)
+    storage.configurator.orderBy(.date).orderDirection(.forward)
     let stories = fakeStories()
     let firstStories = Array(stories[0...2])
     let secondStories = Array(stories[3...5])
@@ -331,7 +331,7 @@ class StoriesTests: XCTestCase {
   
   func testStorageSortsStoriesBySeenDesc() throws {
     let stories = fakeStories()
-    storage.configurator.orderBy(.seen).orderDirection(.desc)
+    storage.configurator.orderBy(.seen).orderDirection(.reverse)
     try storage.clear()
     try storage.add(stories)
     
@@ -345,7 +345,7 @@ class StoriesTests: XCTestCase {
     let stories = fakeStories()
     let firstStories = Array(stories[0...2])
     let secondStories = Array(stories[3...5])
-    storage.configurator.orderBy(.date).orderDirection(.desc)
+    storage.configurator.orderBy(.date).orderDirection(.reverse)
     try storage.clear()
     try storage.add(firstStories)
     
@@ -365,7 +365,7 @@ class StoriesTests: XCTestCase {
     let stories = fakeStories()
     let firstStories = Array(stories[0...2])
     let secondStories = Array(stories[3...5])
-    storage.configurator.orderBy([.date, .seen]).orderDirection(.desc)
+    storage.configurator.orderBy([.date, .seen]).orderDirection(.reverse)
     try storage.clear()
     try storage.add(firstStories)
     
@@ -388,7 +388,7 @@ class StoriesTests: XCTestCase {
     let stories = fakeStories()
     let firstStories = Array(stories[0...2])
     let secondStories = Array(stories[3...5])
-    storage.configurator.orderBy([.date, .seen]).orderDirection([.desc, .asc])
+    storage.configurator.orderBy([.date, .seen]).orderDirection([.reverse, .forward])
     try storage.clear()
     try storage.add(firstStories)
     

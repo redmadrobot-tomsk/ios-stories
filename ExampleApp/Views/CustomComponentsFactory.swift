@@ -13,10 +13,12 @@ class CustomComponentsFactory: StoriesUIComponentsFactory {
   
   override func makeStoryActionButton() -> UIButton {
     let button = UIButton(type: .system)
-    button.backgroundColor = .orange
-    button.layer.cornerRadius = 22
-    button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-    button.setTitleColor(.white, for: .normal)
+    var configuration = UIButton.Configuration.plain()
+    configuration.background.backgroundColor = .orange
+    configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+    configuration.cornerStyle = .capsule
+    configuration.baseForegroundColor = .white
+    button.configuration = configuration
     button.snp.makeConstraints { make in
       make.height.equalTo(44)
     }

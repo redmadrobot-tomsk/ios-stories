@@ -14,10 +14,6 @@ class NavigationController: UINavigationController {
     return topViewController?.prefersStatusBarHidden ?? false
   }
   
-  override var shouldAutorotate: Bool {
-    return topViewController?.shouldAutorotate ?? true
-  }
-  
   override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
     return topViewController?.supportedInterfaceOrientations ?? .portrait
   }

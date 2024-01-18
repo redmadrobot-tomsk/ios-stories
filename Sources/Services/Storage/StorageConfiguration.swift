@@ -10,11 +10,6 @@ public enum StoriesSortType: String, Codable {
   case date, seen
 }
 
-/// Defines sorting direction – `asc` or `desc`.
-public enum SortOrder: String, Codable {
-  case asc, desc
-}
-
 /// Defines stories showing options
 public enum ShowStoriesOption: String, Codable {
   /// Show all stories from the storage.
@@ -62,7 +57,7 @@ public struct StorageConfiguration: Codable {
   /// Default stories' storage configuration
   public static var `default`: StorageConfiguration {
     return StorageConfiguration(storiesLifetime: .infinity, sortType: [.seen, .date],
-                                sortOrder: [.asc, .desc], deleteExpiredStories: false,
+                                sortOrder: [.forward, .reverse], deleteExpiredStories: false,
                                 showStoriesOption: .valid, prefetchImages: false)
   }
 }
