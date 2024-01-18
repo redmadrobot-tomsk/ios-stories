@@ -11,10 +11,11 @@ extension UIButton {
     var configuration = UIButton.Configuration.plain()
     configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
     configuration.background.backgroundColor = .white
-    configuration.baseForegroundColor = .black
+    configuration.background.cornerRadius = 8
     configuration.cornerStyle = .fixed
     configuration.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
       var outgoing = incoming
+      outgoing.foregroundColor = .black
       outgoing.font = .boldSystemFont(ofSize: 16)
       return outgoing
     }

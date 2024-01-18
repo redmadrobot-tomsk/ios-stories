@@ -14,9 +14,9 @@ struct ButtonPropertiesContainer {
   var font: UIFont
   var image: UIImage?
   var highlightedImage: UIImage?
-  var imageEdgeInsets: UIEdgeInsets
-  var titleEdgeInsets: UIEdgeInsets
-  var contentEdgeInsets: UIEdgeInsets
+  var imagePadding: CGFloat
+  var titlePadding: CGFloat
+  var contentEdgeInsets: NSDirectionalEdgeInsets
   
   init(backgroundColor: UIColor,
        cornerRadius: CGFloat = 0,
@@ -26,9 +26,9 @@ struct ButtonPropertiesContainer {
        font: UIFont,
        image: UIImage?,
        highlightedImage: UIImage? = nil,
-       imageEdgeInsets: UIEdgeInsets = .zero,
-       titleEdgeInsets: UIEdgeInsets = .zero,
-       contentEdgeInsets: UIEdgeInsets = .zero) {
+       imagePadding: CGFloat = 0,
+       titlePadding: CGFloat = 0,
+       contentEdgeInsets: NSDirectionalEdgeInsets = .zero) {
     self.backgroundColor = backgroundColor
     self.cornerRadius = cornerRadius
     self.titleColor = titleColor
@@ -37,8 +37,8 @@ struct ButtonPropertiesContainer {
     self.font = font
     self.image = image
     self.highlightedImage = highlightedImage
-    self.imageEdgeInsets = imageEdgeInsets
-    self.titleEdgeInsets = titleEdgeInsets
+    self.imagePadding = imagePadding
+    self.titlePadding = titlePadding
     self.contentEdgeInsets = contentEdgeInsets
   }
 }

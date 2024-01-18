@@ -6,8 +6,9 @@
 import UIKit
 
 private extension Constants {
-  static let topSafeAreaInset: CGFloat = UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0
-  static let bottomSafeAreaInset: CGFloat = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
+  private static let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+  static let topSafeAreaInset: CGFloat = windowScene?.windows.first?.safeAreaInsets.top ?? 0
+  static let bottomSafeAreaInset: CGFloat = windowScene?.windows.first?.safeAreaInsets.bottom ?? 0
 }
 
 class StoryViewModel: StoryViewModelProtocol {
